@@ -1,4 +1,4 @@
-.heroes {               
+.heroes__selectbutton {               
   flex:                 1;
   cursor:               pointer;
   position:             relative;
@@ -12,33 +12,33 @@
   height:               1.8em;
 }                       
                         
-.heroes:hover {         
+.heroes__selectbutton:hover {         
   color:                #2c3a41;
   background-color:     #e6e6e6;
   left:                 .1em;
 }                       
                         
-.heroes:active {        
+.heroes__selectbutton:active {        
   background-color:     #525252;
   color:                #fafafa;
 }                       
                         
-.heroes.selected {      
+.heroes__selectbutton.selected {      
   background-color:     black;
   color:                white;
 }                       
                         
-.heroes.selected:hover {
+.heroes__selectbutton:hover {
   background-color:     #505050;
   color:                white;
 }                       
                         
-.heroes.selected:active {
+.heroes__selectbutton:active {
   background-color:     black;
   color:                white;
 }                       
                         
-.heroes__item--badge {  
+.heroes__selectbutton--badge {  
   display:              inline-block;
   font-size:            small;
   color:                white;
@@ -49,6 +49,6 @@
   border-radius:        4px 0 0 4px;
 }                       
                         
-.heroes__item--name {   
+.heroes__selectbutton--name {   
   align-self:           center;
 }

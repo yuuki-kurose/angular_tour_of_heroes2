@@ -4,9 +4,9 @@
   <!-- heroesプロパティを繰り返しで表示する -->
   <li *ngFor="let hero of heroes">
     <!-- ユーザーがボタンをクリックしたらonSelectメソッドが発火する -->
-    <button type="button" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
-      <span class="heroes__item--badge">{{ hero.id }}</span>
-      <span class="heroes__item--name">{{ hero.name }}</span>
+    <button type="button" (click)="onSelect(hero)" class="heroes__selectbutton">
+      <span class="heroes__selectbutton--badge">{{ hero.id }}</span>
+      <span [class.selected]="hero === selectedHero">{{ hero.name }}</span>
     </button>
   </li>
 </ul>
