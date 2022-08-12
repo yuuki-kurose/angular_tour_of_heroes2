@@ -3,3 +3,8 @@
   <span>ID: {{ hero.id }}</span><br/>
   <span>NAME: {{ hero.name }}</span>
 </div>
+
+<div>
+  <label for="name">Hero name: </label>
+  <input id="name" [(ngModel)]="hero.name" placeholder="Enter a name for the menu">
+</div>
