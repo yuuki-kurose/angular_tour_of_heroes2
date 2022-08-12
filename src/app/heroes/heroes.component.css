@@ -1,4 +1,4 @@
-.heroes button {        
+.select-botton {        
   flex:                 1;
   cursor:               pointer;
   position:             relative;
@@ -12,33 +12,33 @@
   height:               1.8em;
 }                       
                         
-.heroes button:hover {  
+.select-botton:hover {  
   color:                #2c3a41;
   background-color:     #e6e6e6;
   left:                 .1em;
 }                       
                         
-.heroes button:active { 
+.select-botton:active { 
   background-color:     #525252;
   color:                #fafafa;
 }                       
                         
-.heroes button.selected {
+.select-botton.selected {
   background-color:     black;
   color:                white;
 }                       
                         
-.heroes button.selected:hover {
+.select-botton.selected:hover {
   background-color:     #505050;
   color:                white;
 }                       
                         
-.heroes button.selected:active {
+.select-botton.selected:active {
   background-color:     black;
   color:                white;
 }                       
                         
-.heroes .badge {        
+.select-botton__badge {        
   display:              inline-block;
   font-size:            small;
   color:                white;
@@ -49,6 +49,6 @@
   border-radius:         4px 0 0 4px;
 }                       
                         
-.heroes .name {         
+.select-botton__name {         
   align-self:           center;
 }
