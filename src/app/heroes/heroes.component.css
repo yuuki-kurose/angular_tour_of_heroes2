@@ -1,4 +1,4 @@
-.select-botton {        
+.heroes {               
   flex:                 1;
   cursor:               pointer;
   position:             relative;
@@ -12,33 +12,33 @@
   height:               1.8em;
 }                       
                         
-.select-botton:hover {  
+.heroes:hover {         
   color:                #2c3a41;
   background-color:     #e6e6e6;
   left:                 .1em;
 }                       
                         
-.select-botton:active { 
+.heroes:active {        
   background-color:     #525252;
   color:                #fafafa;
 }                       
                         
-.select-botton.selected {
+.heroes.selected {      
   background-color:     black;
   color:                white;
 }                       
                         
-.select-botton.selected:hover {
+.heroes.selected:hover {
   background-color:     #505050;
   color:                white;
 }                       
                         
-.select-botton.selected:active {
+.heroes.selected:active {
   background-color:     black;
   color:                white;
 }                       
                         
-.select-botton__badge {        
+.heroes__item--badge {  
   display:              inline-block;
   font-size:            small;
   color:                white;
@@ -46,9 +46,9 @@
   background-color:     #405061;
   line-height:          1em;
   margin-right:         .8em;
-  border-radius:         4px 0 0 4px;
+  border-radius:        4px 0 0 4px;
 }                       
                         
-.select-botton__name {         
+.heroes__item--name {   
   align-self:           center;
 }

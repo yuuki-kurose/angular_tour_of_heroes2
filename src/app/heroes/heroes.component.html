@@ -5,8 +5,8 @@
   <li *ngFor="let hero of heroes">
     <!-- ユーザーがボタンをクリックしたらonSelectメソッドが発火する -->
     <button type="button" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
-      <span class="select-botton__badge">{{ hero.id }}</span>
-      <span class="select-botton__name">{{ hero.name }}</span>
+      <span class="heroes__item--badge">{{ hero.id }}</span>
+      <span class="heroes__item--name">{{ hero.name }}</span>
     </button>
   </li>
 </ul>
