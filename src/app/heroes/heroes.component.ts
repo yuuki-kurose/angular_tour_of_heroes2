@@ -1,5 +1,5 @@
 import { Component, OnInit }  from '@angular/core';
-import { Hero }               from '../hero';
+import { HEROES }             from '../mock-heroes';
 
 @Component({
   // selectorは差し込む際のタグの名前
@@ -8,8 +8,8 @@ import { Hero }               from '../hero';
   styleUrls:    ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
-  // インポートしたHeroにより、heroプロパティにデータ型が設定できる
-  hero: Hero = { id: 1, name: 'Windstorm' }
+  // 新たに作成したheroesプロパティにインポートしたHEROES(全ヒーローのデータ)を代入する
+  heroes = HEROES;
 
   constructor() { }
 
