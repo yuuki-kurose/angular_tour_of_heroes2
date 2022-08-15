@@ -22,13 +22,23 @@ export class HeroesComponent implements OnInit {
   }
 
   /*
+   * サービスからデータを取得するということは、
+   * サービスにあるgetHeroes()を使用し取得するということ
+   * heroesプロパティには[]が代入されているので型はいらない
+   */ 
+  getHeroes() :void {
+    this.heroes = this.heroService.getHeroes();
+  }
+   
+  /*
    * インスタンス生成時にプライベートなプロパティとして定義され、
    * 同時にheroServiceを注入する場所として認識される
    */
   constructor(private heroService: HeroService) { }
 
   ngOnInit(): void {
+    this.getHeroes();
   }
-
 }
+
 
