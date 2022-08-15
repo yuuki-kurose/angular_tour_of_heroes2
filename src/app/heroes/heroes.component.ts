@@ -1,6 +1,6 @@
 import { Component, OnInit }  from '@angular/core';
 import { Hero }               from '../hero';
-import { HEROES }             from '../mock-heroes';
+import { HeroService }        from '../hero.service';
 
 @Component({
   // selectorは差し込む際のタグの名前
@@ -9,9 +9,10 @@ import { HEROES }             from '../mock-heroes';
   styleUrls:    ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
-  // 新たに作成したheroesプロパティにインポートしたHEROES(全ヒーローのデータ)を代入する
-  heroes = HEROES;
-
+	
+  //Hero型のheroesプロパティを定義から宣言へ変更
+  heroes: Hero[] = [];  
+  
   // selectedHeroプロパティを定義
   selectedHero?: Hero;
 
@@ -20,7 +21,11 @@ export class HeroesComponent implements OnInit {
     this.selectedHero = hero;
   }
 
-  constructor() { }
+  /*
+   * インスタンス生成時にプライベートなプロパティとして定義され、
+   * 同時にheroServiceを注入する場所として認識される
+   */
+  constructor(private heroService: HeroService) { }
 
   ngOnInit(): void {
   }
