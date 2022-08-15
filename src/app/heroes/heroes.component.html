@@ -10,13 +10,7 @@
     </button> 
   </li>
 </ul>
-<!-- クリックイベントの処理により表示/非表示の制御 -->
-<div *ngIf="selectedHero">
-  <h2>{{ selectedHero.name | uppercase }} Details</h2>
-  <div>id: {{ selectedHero.id }}</div>
-  <div>
-    <label for="hero-name">Hero Name: </label>
-    <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="Enter a name for the menu">
-  </div>
-</div>
+
+<!-- 子にデータを渡す為、窓口を設置する -->
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
 
