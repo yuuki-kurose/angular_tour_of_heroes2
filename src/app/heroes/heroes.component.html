@@ -2,12 +2,12 @@
 <!-- ヒーローリスト -->
 <ul class="heroes">
   <!-- heroesプロパティを繰り返しで表示する -->
-  <li *ngFor="let hero of heroes">
+  <li *ngFor="let hero of heroes" class="heroes__list">
     <!-- ユーザーがボタンをクリックしたらonSelectメソッドが発火する -->
-    <button type="button" (click)="onSelect(hero)" class="heroes__selectbutton">
-      <span class="heroes__selectbutton--badge">{{ hero.id }}</span>
-      <span [class.selected]="hero === selectedHero">{{ hero.name }}</span>
-    </button>
+    <button type="button" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
+      <span class="heroes__badge">{{ hero.id }}</span>
+      <span class="heroes__name">{{ hero.name }}</span> 
+    </button> 
   </li>
 </ul>
 <!-- クリックイベントの処理により表示/非表示の制御 -->
