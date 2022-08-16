@@ -1,14 +1,16 @@
-import { Injectable } from '@angular/core';
-import { Hero }       from './hero';
-import { HEROES }     from './mock-heroes';
+import { Injectable }     from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { Hero }           from './hero';
+import { HEROES }         from './mock-heroes';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HeroService {
-  //取得したい物は何かを考えるといいかも
-  getHeroes(): Hero[] {
-   return HEROES;
+  // getHeroes()はof関数によりデータが流され、Observableを返す
+  getHeroes(): Observable<Hero[]> {
+   const heroes = of(HEROES);
+   return heroes;
   } 
 
   constructor() { }
