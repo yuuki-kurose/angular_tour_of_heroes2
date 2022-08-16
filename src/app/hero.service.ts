@@ -1,5 +1,8 @@
 import { Injectable }     from '@angular/core';
 import { Observable, of } from 'rxjs';
+
+import { MessageService } from './message.service';
+
 import { Hero }           from './hero';
 import { HEROES }         from './mock-heroes';
 
@@ -13,5 +16,7 @@ export class HeroService {
    return heroes;
   } 
 
-  constructor() { }
+  // HeroServiceが生成されるタイミングで、MessageServiceが注入される
+  constructor(private messageService: MessageService) { }
 }
+
