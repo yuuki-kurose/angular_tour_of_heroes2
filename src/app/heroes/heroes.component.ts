@@ -27,7 +27,9 @@ export class HeroesComponent implements OnInit {
    * heroesプロパティには[]が代入されているので型はいらない
    */ 
   getHeroes() :void {
-    this.heroes = this.heroService.getHeroes();
+    this.heroService.getHeroes()  
+     //Observable(川)から流れてきた値(value)をsubscribe(購読)する
+     .subscribe(heroes => this.heroes = heroes);
   }
    
   /*
