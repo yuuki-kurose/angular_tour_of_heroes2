@@ -13,7 +13,9 @@ export class HeroService {
   // getHeroes()はof関数によりデータが流され、Observableを返す
   getHeroes(): Observable<Hero[]> {
    const heroes = of(HEROES);
-   return heroes;
+   // messageServiceのadd()を使用し、()内のメッセージが追加される
+   this.messageService.add('HeroService: fetched heroes');
+   return heroes; 
   } 
 
   // HeroServiceが生成されるタイミングで、MessageServiceが注入される
