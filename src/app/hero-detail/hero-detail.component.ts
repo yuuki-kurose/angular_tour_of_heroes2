@@ -12,6 +12,7 @@ import { Hero }                     from '../hero';
   styleUrls:   ['./hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit {
+  hero: Hero | undefined;
 
   // ActivateRouteはルートに関する情報を保持している
   constructor(
