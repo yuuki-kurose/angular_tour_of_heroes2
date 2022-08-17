@@ -1,1 +1,6 @@
-<p>dashboard works!</p>
+<h2 class="heroes-nav-title">Top Heroes</h2>
+<div class="heroes-menu">
+  <a class="heroes-detail__link" *ngFor="let hero of heroes">
+   {{ hero.name }} 
+  </a>
+</div>
