@@ -9,7 +9,7 @@
   display:              flex;
 }
 
-.heroes button {
+ span {
   flex:                 1;
   cursor:               pointer;
   position:             relative;
@@ -23,28 +23,28 @@
   height:               1.8em;
 }
                         
-.heroes button:hover {
+ span :hover {
   color:                #2c3a41;
   background-color:     #e6e6e6;
   left:                 .1em;
 }
                         
-.heroes button:active {
+ span :active {
   background-color:     #525252;
   color:                #fafafa;
 }
                         
-.heroes button.selected {
+ a.selected {
   background-color:     black;
   color:                white;
 }
                         
-.heroes button:hover {
+ a :hover {
   background-color:     #505050;
   color:                white;
 }
                         
-.heroes button:active {
+ a :active {
   background-color:     black;
   color:                white;
 }
@@ -60,7 +60,7 @@
   border-radius:        4px 0 0 4px;
 }
                         
-.heroes__name {
-  align-self:           center;
-}
-
+/*
+ * .heroes__name {
+ *    align-self:       center;
+ */
