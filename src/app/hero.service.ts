@@ -14,20 +14,22 @@ import { HEROES }                  from './mock-heroes';
 export class HeroService {
   constructor(
    private http: HttpClient,
+   private messageService: MessageService,
+  ) { }
+
    // 頻繁に使用するからlog()でラップするとはどういうことなのか？
    private log(message: string) {
      this.messageService.add(`HeroService: ${ message }`);
-   },
+   }
+
    private heroesUrl = 'api/heroes';
-  ) { }
 
   
   // getHeroes()はof関数によりデータが流され、Observableを返す
   getHeroes(): Observable<Hero[]> {
-   const heroes = of(HEROES);
+   return this.http.get<Hero[]>(this.heroesUrl)
    // messageServiceのadd()を使用し、()内のメッセージが追加される
    this.messageService.add('HeroService: fetched heroes');
-   return heroes; 
   } 
 
   // HEROESの中から選択されたidを持つヒーローがObservableとなって返される 
