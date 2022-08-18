@@ -12,8 +12,13 @@ import { HEROES }                  from './mock-heroes';
   providedIn: 'root'
 })
 export class HeroService {
-  // HeroServiceが生成されるタイミングで、MessageServiceが注入される
-  constructor(private messageService: MessageService) { }
+  constructor(
+   private http: HttpClient,
+   // 頻繁に使用するからlog()でラップするとはどういうことなのか？
+   private log(message: string) {
+     this.messageService.add(`HeroService: ${ message }`);
+  ) { }
+
   
   // getHeroes()はof関数によりデータが流され、Observableを返す
   getHeroes(): Observable<Hero[]> {
