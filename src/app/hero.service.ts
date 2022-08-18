@@ -10,6 +10,9 @@ import { HEROES }         from './mock-heroes';
   providedIn: 'root'
 })
 export class HeroService {
+  // HeroServiceが生成されるタイミングで、MessageServiceが注入される
+  constructor(private messageService: MessageService) { }
+  
   // getHeroes()はof関数によりデータが流され、Observableを返す
   getHeroes(): Observable<Hero[]> {
    const heroes = of(HEROES);
@@ -18,7 +21,11 @@ export class HeroService {
    return heroes; 
   } 
 
-  // HeroServiceが生成されるタイミングで、MessageServiceが注入される
-  constructor(private messageService: MessageService) { }
+  // HEROESの中から選択されたidを持つヒーローがObservableとなって返される 
+  getHero(id: number): Observable<Hero> {
+   const hero = HEROES.find(h => h.id === id)!;
+   this.messageService.add(`HeroService: fetched hero id=${ id }`);
+   return of(hero);
+  }
 }
 

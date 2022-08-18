@@ -3,14 +3,10 @@
 <ul class="heroes">
   <!-- heroesプロパティを繰り返しで表示する -->
   <li *ngFor="let hero of heroes" class="heroes__list">
-    <!-- ユーザーがボタンをクリックしたらonSelectメソッドが発火する -->
-    <button type="button" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
-      <span class="heroes__badge">{{ hero.id }}</span>
-      <span class="heroes__name">{{ hero.name }}</span> 
-    </button> 
+    <a routerLink="/detail/{{ hero.id }}" class="heroes__link">
+      <span class="heroes__badge">{{ hero.id }}</span>{{ hero.name }}
+    </a>
   </li>
 </ul>
 
-<!-- 子にデータを渡す為、窓口を設置する -->
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
 
