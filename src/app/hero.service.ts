@@ -17,6 +17,8 @@ export class HeroService {
    // 頻繁に使用するからlog()でラップするとはどういうことなのか？
    private log(message: string) {
      this.messageService.add(`HeroService: ${ message }`);
+   },
+   private heroesUrl = 'api/heroes';
   ) { }
 
   
