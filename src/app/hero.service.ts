@@ -1,5 +1,6 @@
 import { Injectable }              from '@angular/core';
 import { Observable, of }          from 'rxjs';
+import { catchError, map, tap }    from 'rxjs/operators';
 
 import { MessageService }          from './message.service';
 
@@ -24,10 +25,24 @@ export class HeroService {
 
    private heroesUrl = 'api/heroes';
 
+   /*
+    * 長くて難しそうに見えるけど、handleError()はlogにエラーメッセージを出力し、
+    * 実行を止めないようにする処理をしているだけ
+    */
+   private handleError<T>(operation = 'operation',result?: T) {
+     return (error: any): Observable<T> => {
+       console.error(error);
+       this.log(`${ operation } failed: ${ error.message }`);
+       return of(result as T);
+     }
+   }
   
   // getHeroes()はof関数によりデータが流され、Observableを返す
   getHeroes(): Observable<Hero[]> {
    return this.http.get<Hero[]>(this.heroesUrl)
+     .pipe(
+        catchError(this.handleError<Hero[]>('getHeroes',[]))
+     );
    // messageServiceのadd()を使用し、()内のメッセージが追加される
    this.messageService.add('HeroService: fetched heroes');
   } 
