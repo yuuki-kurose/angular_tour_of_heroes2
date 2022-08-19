@@ -25,9 +25,9 @@ export class HeroService {
 
    private heroesUrl = 'api/heroes';
 
-   /*
-     長くて難しそうに見えるけど、handleError()はlogにエラーメッセージを出力し、
-     実行を止めないようにする処理をしているだけ
+   /**
+    *  長くて難しそうに見えるけど、handleError()はlogにエラーメッセージを出力し
+    *  実行を止めないようにする処理をしているだけ
     */
    private handleError<T>(operation = 'operation',result?: T) {
      return (error: any): Observable<T> => {
