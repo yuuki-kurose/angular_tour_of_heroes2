@@ -26,9 +26,9 @@ export class HeroService {
    private heroesUrl = 'api/heroes';
 
    /**
-    *  長くて難しそうに見えるけど、handleError()はlogにエラーメッセージを出力し
-    *  実行を止めないようにする処理をしているだけ
-    */
+     *  長くて難しそうに見えるけど、handleError()はlogにエラーメッセージを出力し
+     *  実行を止めないようにする処理をしているだけ
+     */
    private handleError<T>(operation = 'operation',result?: T) {
      return (error: any): Observable<T> => {
        console.error(error);
@@ -44,15 +44,17 @@ export class HeroService {
         tap(heroes => this.log(`fetched heroes`)),
         catchError(this.handleError<Hero[]>('getHeroes',[]))
      );
-   // messageServiceのadd()を使用し、()内のメッセージが追加される
-   this.messageService.add('HeroService: fetched heroes');
+     // messageServiceのadd()を使用し、()内のメッセージが追加される
+     this.messageService.add('HeroService: fetched heroes');
   } 
 
   // HEROESの中から選択されたidを持つヒーローがObservableとなって返される 
   getHero(id: number): Observable<Hero> {
-   const hero = HEROES.find(h => h.id === id)!;
-   this.messageService.add(`HeroService: fetched hero id=${ id }`);
-   return of(hero);
+    const url = `${ this.heroesUrl }/ ${ id }`; 
+    return this.http.get<Hero>(url).pipe(
+      tap(_ => this.log(`fetched hero id=${ id }`)),
+      catchError(this.handleError<Hero>(`getHero id=${ id }`))
+    );
   }
 }
 
