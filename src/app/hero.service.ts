@@ -26,8 +26,8 @@ export class HeroService {
    private heroesUrl = 'api/heroes';
 
    /*
-    * 長くて難しそうに見えるけど、handleError()はlogにエラーメッセージを出力し、
-    * 実行を止めないようにする処理をしているだけ
+     長くて難しそうに見えるけど、handleError()はlogにエラーメッセージを出力し、
+     実行を止めないようにする処理をしているだけ
     */
    private handleError<T>(operation = 'operation',result?: T) {
      return (error: any): Observable<T> => {
@@ -41,6 +41,7 @@ export class HeroService {
   getHeroes(): Observable<Hero[]> {
    return this.http.get<Hero[]>(this.heroesUrl)
      .pipe(
+        tap(heroes => this.log(`fetched heroes`)),
         catchError(this.handleError<Hero[]>('getHeroes',[]))
      );
    // messageServiceのadd()を使用し、()内のメッセージが追加される
