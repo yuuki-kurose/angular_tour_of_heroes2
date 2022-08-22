@@ -1369,6 +1369,13 @@
   dependencies:
     tslib "^2.3.0"
 
+"@ngxs/store@^3.7.5":
+  version "3.7.5"
+  resolved "https://registry.yarnpkg.com/@ngxs/store/-/store-3.7.5.tgz#5698e2d71751ed77922f50be5db41a466f74163a"
+  integrity sha512-SGM+m5EK+5Vy+j6jy5Vgyv7rl59/DsizNntgelPHh5LVfX+Ynm/YkkpHMh442k0bqbXbbsvCxkbEIL48n+H9/Q==
+  dependencies:
+    tslib "^1.9.0"
+
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz#7619c2eb21b25483f6d167548b4cfd5a7488c3d5"
