@@ -50,6 +50,19 @@ export class HeroState {
         )
     }
 
+  @Action(HeroAction.Select)
+    select(ctx: StateContext<HeroStateModel>, action: HeroAction.Select) {
+      const id = action.id;
+      return this.heroService.getHero(id)
+        .pipe(
+           tap((data: Hero) => {
+             ctx.patchState({
+               selectedHero: data
+             });
+           }),
+        )
+    }
+  
   @Action(HeroAction.Add)
     addHero(ctx: StateContext<HeroStateModel>, action: HeroAction.Add) {
       const hero = action.payload;
@@ -60,4 +73,24 @@ export class HeroState {
         }),
       );
     }
+
+  @Action(HeroAction.Delete)
+    deleteHero(ctx: StateContext<HeroStateModel>, action: HeroAction.Delete) {
+      const hero = action.payload;
+      const id =   typeof hero === 'number' ? hero: hero.id;
+
+      return this.heroService.deleteHero(hero).pipe(
+        finalize(() => {
+          ctx.dispatch(new HeroAction.Load());
+        }),
+      );
+    }
+
+  @Action(HeroAction.Update)
+    updateHero(ctx: StateContext<HeroStateModel>, action: HeroAction.Update): Observable<any> {
+      const hero = action.payload;
+
+      return this.heroService.updateHero(hero);
+    }
+}
 
