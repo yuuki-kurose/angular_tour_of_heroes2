@@ -31,6 +31,12 @@ export class HeroDetailComponent implements OnInit {
     this.heroService.getHero(id).subscribe(hero => this.hero = hero);
   }
 
+  // save()はupdateHeroの変更を永続させる為のメソッド
+  save(): void {
+    if(this.hero) {
+      this.heroService.updateHero(this.hero).subscribe(() => this.goBack());
+    }
+  }
   goBack(): void {
     this.location.back();
   }
