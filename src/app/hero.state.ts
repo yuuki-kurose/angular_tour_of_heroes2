@@ -17,7 +17,7 @@ export class HeroStateModel {
   name:           'heroes',
   // defaultsはHeroStateModelのデフォルト値を指す
   defaults: {
-    selectedHero: null,
+    selectedHero: undefined,
     heroes:       []
   }
 })
