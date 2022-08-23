@@ -9,28 +9,38 @@ export namespace HeroAction {
   export const DELETE_HERO = 'Delete_Hero';
   export const UPDATE_HERO = 'Update_Hero';
 
-  //ここからコードが間違っていたので訂正していきます。↓
+  export class Load {
+    static readonly type = LOAD_HERO;
+  }
+
+  export class Select {
+    static readonly type = SELECT_HERO;
+
+    constructor(public id: number) {}
+  }
 
   // 追加
   export class Add {
-    static readonly type = '[Hero] Add';
+    static readonly type = ADD_HERO;
 
-    constructor(public hero: Hero) {}
+    constructor(public payload: Hero) {}
   }
 
   // 削除
   export class Delete {
-    static readonly type = '[Hero] Delete';
+    static readonly type = DELETE_HERO;
 
-    constructor(public hero: Hero | number) {}
+    constructor(public payload: Hero) {}
   }
 
   // 更新
   export class Update {
-    static readonly type = '[Hero] Update';
+    static readonly type = UPDATE_HERO; 
 
-    constructor(public hero: Hero) {}
+    constructor(public payload: Hero) {}
   }
+}
+
 
 
 
