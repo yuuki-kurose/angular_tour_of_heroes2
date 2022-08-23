@@ -35,9 +35,8 @@ import { HeroSearchComponent }            from './hero-search/hero-search.compon
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService,{ dataEncapsulation: false }
     ),
-    NgxsModule.forRoot([
-      HeroState
-    ]),
+    NgxsModule.forRoot([HeroState]),
+    NgxsLoggerPluginModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

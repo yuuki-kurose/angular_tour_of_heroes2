@@ -2,6 +2,15 @@ import { Hero } from './hero';
 
 // 複数のActionがある時は、namespaceでまとめることができる。
 export namespace HeroAction {
+  
+  export const LOAD_HERO =   'Load_Hero';
+  export const SELECT_HERO = 'Select_Hero';
+  export const ADD_HERO =    'Add_Hero';
+  export const DELETE_HERO = 'Delete_Hero';
+  export const UPDATE_HERO = 'Update_Hero';
+
+  //ここからコードが間違っていたので訂正していきます。↓
+
   // 追加
   export class Add {
     static readonly type = '[Hero] Add';
@@ -23,18 +32,7 @@ export namespace HeroAction {
     constructor(public hero: Hero) {}
   }
 
-  // 取得
-  export class get {
-    static readonly type = '[Hero] Get';
 
-    constructor(public id: number) {}
-  }
-
-  // 全て取得
-  export class getAll {
-    static readonly type = '[Hero] GetAll';
-  }
-}
 
 
 
