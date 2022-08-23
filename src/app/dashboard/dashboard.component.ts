@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+
+import { Observable }        from 'rxjs';
+
+import { Store, Select }     from '@ngxs/store';
+import { HeroAction }        from '../hero.action';
+import { HeroState }         from '../hero.state';
+
 import { Hero }              from '../hero';
-import { HeroService }       from '../hero.service';
 
 @Component({
   selector:    'app-dashboard',
@@ -8,17 +14,18 @@ import { HeroService }       from '../hero.service';
   styleUrls:   ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  heroes: Hero[] = [];
+  
+  @Select(HeroState.heroes) heroes$?: Observable<Hero[]>;
 
-  constructor(private heroService: HeroService) { }
+  // サービスからデータが流れてくるのではなく、NgxsのStoreで状態が管理される
+  constructor(private store: Store) { }
 
   ngOnInit(): void {
     this.getHeroes();
   }
 
   getHeroes(): void {
-    this.heroService.getHeroes()
-      .subscribe(heroes => this.heroes = heroes.slice(1, 5));
+    this.store.dispatch(new HeroAction.Load())
   }
 
 }
