@@ -8,7 +8,7 @@ import { HeroAction }                            from './hero.action';
 import { HeroService }                           from './hero.service';
 
 export class HeroStateModel {
-  selectedHero: Hero | undefined; 
+  selectedHero?: Hero; 
   heroes:       Hero[] | undefined;
 }
 // このデコレータの後ろに記述されるクラスはStateクラスであることを指す
