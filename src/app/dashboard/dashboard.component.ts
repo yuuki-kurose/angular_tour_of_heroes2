@@ -15,7 +15,7 @@ import { Hero }              from '../hero';
 })
 export class DashboardComponent implements OnInit {
   
-  @Select(HeroState.heroes) heroes$!: Observable<Hero[]>;
+  @Select(HeroState.heroes) heroes$?: Observable<Hero[]>;
 
   // サービスからデータが流れてくるのではなく、NgxsのStoreで状態が管理される
   constructor(private store: Store) { }
