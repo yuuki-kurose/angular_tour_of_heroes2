@@ -1,6 +1,8 @@
+import { Injectable }                            from '@angular/core';
 import { Observable }                            from 'rxjs';
 import { tap, finalize }                         from 'rxjs/operators';
 
+import { Receiver }                              from '@ngxs-labs/emitter';
 import { State, Action, StateContext, Selector } from '@ngxs/store';
 
 import { Hero }                                  from './hero';
@@ -9,7 +11,7 @@ import { HeroService }                           from './hero.service';
 
 export class HeroStateModel {
   selectedHero?: Hero; 
-  heroes:       Hero[] | undefined;
+  heroes:        Hero[] | undefined;
 }
 // このデコレータの後ろに記述されるクラスはStateクラスであることを指す
 @State<HeroStateModel> ({
