@@ -1,13 +1,15 @@
-import { Injectable }                            from '@angular/core';
-import { Observable }                            from 'rxjs';
-import { tap, finalize }                         from 'rxjs/operators';
+import { Injectable }                                  from '@angular/core';
 
-import { Receiver }                              from '@ngxs-labs/emitter';
-import { State, Action, StateContext, Selector } from '@ngxs/store';
+import { Observable }                                  from 'rxjs';
+import { tap, finalize }                               from 'rxjs/operators';
 
-import { Hero }                                  from './hero';
-import { HeroAction }                            from './hero.action';
-import { HeroService }                           from './hero.service';
+import { Receiver }                                    from '@ngxs-labs/emitter';
+import { State, Action, StateContext, Selector }       from '@ngxs/store';
+import { Emittable, Emitter, EmitterAction }           from '@ngxs-labs/emitter';
+
+import { Hero }                                        from './hero';
+import { HeroAction }                                  from './hero.action';
+import { HeroService }                                 from './hero.service';
 
 export class HeroStateModel {
   selectedHero?: Hero; 
@@ -24,11 +26,14 @@ export class HeroStateModel {
   }
 })
 
-// HeroStateクラスはStateクラスである
+// @Injectableは提供可能なマークをクラスに付ける。
 @Injectable()
 export class HeroState {
   // 依存性の注入
   constructor(private heroService: HeroService) {}
+
+  @Emitter(HeroState.heroes) static state: Emittable<void>; 
+  @Emitter(HeroState.selectedHero) static state: Emittable<void>; 
 
   @Receiver()
     static heroes(state: HeroStateModel) {
