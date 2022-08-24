@@ -11,10 +11,13 @@ import { CounterState, CounterStateModel } from './store/counter.state';
   styleUrls:    ['./app.component.css']
 })
 export class AppComponent {
+  title = '';
   @Select(CounterState)
+
     public count$: Observable<CounterStateModel>;
   
   @Emitter(CounterState.setValue)
+  
     public counterValue: Emittable<number>;
 }
 
