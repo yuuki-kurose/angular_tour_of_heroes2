@@ -1,9 +1,4 @@
-import { Component }                       from '@angular/core';
-import { Select }                          from '@ngxs/store';
-import { Emitter, Emittable }              from '@ngxs-labs/emitter';
-import { Observable }                      from 'rxjs';
-
-import { CounterState, CounterStateModel } from './store/counter.state';
+import { Component } from '@angular/core';
 
 @Component({
   selector:     'app-root',
@@ -12,13 +7,6 @@ import { CounterState, CounterStateModel } from './store/counter.state';
 })
 export class AppComponent {
   title = '';
-  @Select(CounterState)
-
-    public count$: Observable<CounterStateModel>;
-  
-  @Emitter(CounterState.setValue)
-  
-    public counterValue: Emittable<number>;
 }
 
 
