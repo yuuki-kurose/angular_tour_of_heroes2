@@ -33,14 +33,15 @@ export class HeroState {
   constructor(private heroService: HeroService) {}
 
   @Emitter(HeroState.) static ; 
-  @Emitter(HeroState.) static ; 
+  @Emitter(HeroState.) static ;
 
-  @Selector()
+  // @ReceiverはメソッドをEmitterに渡す
+  @Receiver()
     static heroes(state: HeroStateModel) {
       return state.heroes;
     }
 
-  @Selector()
+  @Receiver()
     static selectedHero(state: HeroStateModel) {
       return state.selectedHero;
     }

@@ -1,5 +1,5 @@
 import { Store }  from '@ngxs/store';
 
-export class DashboardComponent implements OnInit {
+export class DashboardComponent {
   constructor(private store: Store) {}
 }
