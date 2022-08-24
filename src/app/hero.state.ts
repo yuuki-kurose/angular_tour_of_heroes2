@@ -25,20 +25,20 @@ export class HeroStateModel {
 })
 
 // HeroStateクラスはStateクラスである
+@Injectable()
 export class HeroState {
   // 依存性の注入
   constructor(private heroService: HeroService) {}
 
-  // ここからセレクター↓
-  @Selector()
+  @Receiver()
     static heroes(state: HeroStateModel) {
       return state.heroes;
-  }
+    }
 
-  @Selector()
+  @Receiver()
     static selectedHero(state: HeroStateModel) {
       return state.selectedHero;
-  }
+    }
 
   @Action(HeroAction.Load)
     load(ctx: StateContext<HeroStateModel>) {
