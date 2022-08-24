@@ -32,15 +32,15 @@ export class HeroState {
   // 依存性の注入
   constructor(private heroService: HeroService) {}
 
-  @Emitter(HeroState.heroes) static state: Emittable<void>; 
-  @Emitter(HeroState.selectedHero) static state: Emittable<void>; 
+  @Emitter(HeroState.) static ; 
+  @Emitter(HeroState.) static ; 
 
-  @Receiver()
+  @Selector()
     static heroes(state: HeroStateModel) {
       return state.heroes;
     }
 
-  @Receiver()
+  @Selector()
     static selectedHero(state: HeroStateModel) {
       return state.selectedHero;
     }
