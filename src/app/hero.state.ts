@@ -32,8 +32,8 @@ export class HeroState {
   // 依存性の注入
   constructor(private heroService: HeroService) {}
 
-  //@Emitter(HeroService().getHeroes)  public getHeroes!: Emittable<Hero[]>; 
-  //@Emitter(HeroService().getHero)      public getHero!:   Emittable<Hero>;
+  @Emitter(State) public heroes!:       Emittable<Hero[]>; 
+  @Emitter(State) public selectedHero!: Emittable<Hero>;
 
   // @ReceiverはメソッドをEmitterに渡す
   @Receiver()
