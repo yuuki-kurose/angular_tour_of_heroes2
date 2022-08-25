@@ -11,31 +11,27 @@ import { Hero }                                        from './hero';
 import { HeroAction }                                  from './hero.action';
 import { HeroService }                                 from './hero.service';
 
-export class HeroStateModel {
+// StateModelの型を定義
+export interface HeroStateModel {
   selectedHero?: Hero; 
-  heroes:        Hero[] | undefined;
+  heroes?:       Hero[];
 }
-// このデコレータの後ろに記述されるクラスはStateクラスであることを指す
+
 @State<HeroStateModel> ({
-  // nameはStateの名前を指す
   name:           'heroes',
-  // defaultsはHeroStateModelのデフォルト値を指す
   defaults: {
     selectedHero: undefined,
     heroes:       []
   }
 })
 
-// @Injectableは提供可能なマークをクラスに付ける。
+// Stateクラス内で、Receiverを定義する
 @Injectable()
 export class HeroState {
-  // 依存性の注入
+
   constructor(private heroService: HeroService) {}
 
-  @Emitter(State) public heroes!:       Emittable<Hero[]>; 
-  @Emitter(State) public selectedHero!: Emittable<Hero>;
 
-  // @ReceiverはメソッドをEmitterに渡す
   @Receiver()
     static heroes(state: HeroStateModel) {
       return state.heroes;
