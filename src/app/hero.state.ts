@@ -32,8 +32,8 @@ export class HeroState {
   // 依存性の注入
   constructor(private heroService: HeroService) {}
 
-  @Emitter(HeroState.heroes)       static heroes:       Emittable<void>; 
-  @Emitter(HeroState.selectedHero) static selectedHero: Emittable<void>;
+  //@Emitter(HeroService().getHeroes)  public getHeroes!: Emittable<Hero[]>; 
+  //@Emitter(HeroService().getHero)      public getHero!:   Emittable<Hero>;
 
   // @ReceiverはメソッドをEmitterに渡す
   @Receiver()
@@ -59,7 +59,7 @@ export class HeroState {
     }
 
   @Action(HeroAction.Select)
-    select:ctx: StateContext<HeroStateModel>, action: HeroAction.Select) {
+    select(ctx: StateContext<HeroStateModel>, action: HeroAction.Select) {
       const id = action.id;
       return this.heroService.getHero(id)
         .pipe(
