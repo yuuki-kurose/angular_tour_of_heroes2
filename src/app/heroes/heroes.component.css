@@ -9,7 +9,7 @@
   position: relative;
   cursor: pointer;
 }
-.detail__item .detail__item--link {
+.detail__item.link {
   color: #333;
   text-decoration: none;
   background-color: #EEE;
@@ -20,14 +20,14 @@
   display: block;
   width: 100%;
 }
-.detail__item .detail__item--link .detail__item--link:hover {
+.detail__item.link.link:hover {
   left: 0.1em;
 }
-.detail__item .detail__item--link .detail__item--link:hover .detail__item--link:hover {
+.detail__item.link.link:hover.link:hover {
   background-color: #2c3a41;
   color: #e6e6e6;
 }
-.detail__item .detail__item--link .detail__item--link:hover .detail__item--link:hover .detail__item--link:active {
+.detail__item.link.link:hover.link:hover.link:active {
   background-color: #525252;
   color: #fafafa;
 }
