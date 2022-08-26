@@ -7,6 +7,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { NgxsModule }                     from '@ngxs/store';
 import { NgxsLoggerPluginModule }         from '@ngxs/logger-plugin';
+import { NgxsEmitPluginModule }           from '@ngxs-labs/emitter';
 import { HeroState }                      from './hero.state';
 
 import { InMemoryDataService }            from './in-memory-data.service';
@@ -37,6 +38,7 @@ import { HeroSearchComponent }            from './hero-search/hero-search.compon
     ),
     NgxsModule.forRoot([HeroState]),
     NgxsLoggerPluginModule.forRoot(),
+    NgxsEmitPluginModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

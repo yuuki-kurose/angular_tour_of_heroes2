@@ -1,42 +1,46 @@
-import { Observable }                            from 'rxjs';
-import { tap, finalize }                         from 'rxjs/operators';
+import { Injectable }                                  from '@angular/core';
 
-import { State, Action, StateContext, Selector } from '@ngxs/store';
+import { Observable }                                  from 'rxjs';
+import { tap, finalize }                               from 'rxjs/operators';
 
-import { Hero }                                  from './hero';
-import { HeroAction }                            from './hero.action';
-import { HeroService }                           from './hero.service';
+import { Receiver }                                    from '@ngxs-labs/emitter';
+import { State, Action, StateContext, Selector }       from '@ngxs/store';
+import { Emittable, Emitter, EmitterAction }           from '@ngxs-labs/emitter';
 
-export class HeroStateModel {
+import { Hero }                                        from './hero';
+import { HeroAction }                                  from './hero.action';
+import { HeroService }                                 from './hero.service';
+
+// StateModelの型を定義
+export interface HeroStateModel {
   selectedHero?: Hero; 
-  heroes:       Hero[] | undefined;
+  heroes?:       Hero[];
 }
-// このデコレータの後ろに記述されるクラスはStateクラスであることを指す
+
 @State<HeroStateModel> ({
-  // nameはStateの名前を指す
   name:           'heroes',
-  // defaultsはHeroStateModelのデフォルト値を指す
   defaults: {
     selectedHero: undefined,
     heroes:       []
   }
 })
 
-// HeroStateクラスはStateクラスである
+// Stateクラス内で、Receiverを定義する
+@Injectable()
 export class HeroState {
-  // 依存性の注入
+
   constructor(private heroService: HeroService) {}
 
-  // ここからセレクター↓
-  @Selector()
+
+  @Receiver()
     static heroes(state: HeroStateModel) {
       return state.heroes;
-  }
+    }
 
-  @Selector()
+  @Receiver()
     static selectedHero(state: HeroStateModel) {
       return state.selectedHero;
-  }
+    }
 
   @Action(HeroAction.Load)
     load(ctx: StateContext<HeroStateModel>) {
