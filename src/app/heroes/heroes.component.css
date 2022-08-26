@@ -9,6 +9,7 @@
   position: relative;
   cursor: pointer;
 }
+
 .detail__item.link {
   color: #333;
   text-decoration: none;
@@ -20,14 +21,17 @@
   display: block;
   width: 100%;
 }
-.detail__item.link.link:hover {
+
+.detail__item.link:hover {
   left: 0.1em;
 }
-.detail__item.link.link:hover.link:hover {
+
+.detail__item.link:hover {
   background-color: #2c3a41;
   color: #e6e6e6;
 }
-.detail__item.link.link:hover.link:hover.link:active {
+
+.detail__item.link:active {
   background-color: #525252;
   color: #fafafa;
 }
