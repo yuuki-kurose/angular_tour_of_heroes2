@@ -9,8 +9,7 @@
   position: relative;
   cursor: pointer;
 }
-
-.detail__item--link {
+.detail__item .detail__item--link {
   color: #333;
   text-decoration: none;
   background-color: #EEE;
@@ -21,22 +20,19 @@
   display: block;
   width: 100%;
 }
-
-.detail__item--link:hover {
+.detail__item .detail__item--link .detail__item--link:hover {
   left: 0.1em;
 }
-
-.heroes__item--link:hover {
+.detail__item .detail__item--link .detail__item--link:hover .detail__item--link:hover {
   background-color: #2c3a41;
   color: #e6e6e6;
 }
-
-.heroes__item--link:active {
+.detail__item .detail__item--link .detail__item--link:hover .detail__item--link:hover .detail__item--link:active {
   background-color: #525252;
   color: #fafafa;
 }
 
-.heroes__badge {
+.detail__item--badge {
   display: inline-block;
   font-size: small;
   color: white;
