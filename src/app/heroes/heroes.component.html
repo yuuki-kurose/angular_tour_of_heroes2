@@ -1,5 +1,7 @@
 <h2>My Heroes</h2>
-<div class="heroes__sectiondetail">
+
+<!-- sectionとdetailの２つのクラスを定義する -->
+<div class="heroes__section detail">
    <label for="new-hero">Hero name: </label>
    <input id="new-hero" #heroName/>
    <button type="button" class="add-button" (click)="add(heroName.value); heroName.value=''">Add hero</button>
