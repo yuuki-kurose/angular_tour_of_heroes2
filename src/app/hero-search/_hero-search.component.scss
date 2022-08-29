@@ -23,28 +23,28 @@
   list-style-type: none;
 }
 
-//ここの書き方が分からない
-.display__container li a {
-  border-bottom:   1px solid gray;
-  border-left:     1px solid gray;
-  border-right:    1px solid gray;
-  display:         inline-block;
-  width:           100%;
-  max-width:       600px;
-  padding:         .5rem;
-  box-sizing:      border-box;
-  text-decoration: none;
-  color:           black;
+.display__container {
+  > li, > a {
 
+     border-bottom:   1px solid gray;
+     border-left:     1px solid gray;
+     border-right:    1px solid gray;
+     display:         inline-block;
+     width:           100%;
+     max-width:       600px;
+     padding:         .5rem;
+     box-sizing:      border-box;
+     text-decoration: none;
+     color:           black;
 
-  > li a:hover {
-  background-color: #435A60;
-  color:            white;
+     &:hover {
+       background-color: #435A60;
+       color:            white;
+     }
   }
 }
 
-//何でこの書き方するのか分からない
-ul.search-result {
+.display__container {
   margin-top:   0;
   padding-left: 0;
 }
