@@ -79,9 +79,9 @@ $active-bgcolor: #525252;
   border-radius:    4px 0 0 4px;
 }
 
-.add-button {
+.heroes__search--add-button {
  @include       button-skin;
- @include       button-structure;
+ padding:       .5rem 1.5rem;
  margin-bottom: 2rem;
 }
 
@@ -92,9 +92,11 @@ $active-bgcolor: #525252;
 
 .detail__item--delete-button {
   @include          button-skin;
-  @include          button-structure;
+  position:         absolute;
   left:             210px;
   top:              5px;
+  margin:           0;
+  padding:          1px 10px 3px 10px;
 }
 
 .detail__item--delete-button:hover {

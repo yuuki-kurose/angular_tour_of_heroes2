@@ -1,10 +1,10 @@
 <h2>My Heroes</h2>
 
 <!-- sectionとdetailの２つのクラスを定義する -->
-<div>
+<div class="heroes__search">
    <label for="new-hero">Hero name: </label>
    <input id="new-hero" #heroName/>
-   <button type="button" class="add-button" (click)="add(heroName.value); heroName.value=''">Add hero</button>
+   <button type="button" class="heroes__search--add-button" (click)="add(heroName.value); heroName.value=''">Add hero</button>
 </div>
 <!-- ヒーローリスト -->
 <div class="heroes__section detail">
