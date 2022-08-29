@@ -4,7 +4,7 @@
 
    <ul class="display__container">
      <li class="display__contents" *ngFor="let hero of heroes$ | async">
-       <a routerLink="/detail/{{ hero.id }}">
+       <a class="display__contents--link" routerLink="/detail/{{ hero.id }}">
          {{ hero. name }}
        </a>
      </li>
