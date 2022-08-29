@@ -1,4 +1,4 @@
-label {
+.search__text--label {
   display:       block;
   font-weight:   bold;
   font-size:     1.2rem;
@@ -6,22 +6,25 @@ label {
   margin-bottom: .5rem;
 
 }
-input {
+.search__text--box {
   padding:    .5rem;
   width:      100%;
   max-width:  600px;
   box-sizing: border-box;
   display:    block;
+
+
+  &:focus {
+    outline: #336699 auto 1px;
+  }
 }
 
-input:focus {
-  outline: #336699 auto 1px;
-}
-
-li {
+.display__contents {
   list-style-type: none;
 }
-.search-result li a {
+
+//ここの書き方が分からない
+.display__container li a {
   border-bottom:   1px solid gray;
   border-left:     1px solid gray;
   border-right:    1px solid gray;
@@ -32,13 +35,15 @@ li {
   box-sizing:      border-box;
   text-decoration: none;
   color:           black;
-}
 
-.search-result li a:hover {
+
+  > li a:hover {
   background-color: #435A60;
   color:            white;
+  }
 }
 
+//何でこの書き方するのか分からない
 ul.search-result {
   margin-top:   0;
   padding-left: 0;
