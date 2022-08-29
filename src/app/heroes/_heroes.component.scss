@@ -1,5 +1,5 @@
 // 実際にリンクの動作のクラスを変数に代入してみる
-$hover-bgcolor: #2c3a41;
+$hover-bgcolor:  #2c3a41;
 $active-bgcolor: #525252;
 
 // あらかじめよく使用するのは、mixinに登録しておく
@@ -64,6 +64,33 @@ $active-bgcolor: #525252;
   text-align:       right;
   margin-right:     0.8em;
   border-radius:    4px 0 0 4px;
+}
+
+.add-button {
+ padding:       .5rem 1.5rem;
+ font-size:     1rem;
+ margin-bottom: 2rem;
+}
+
+.add-button:hover {
+  color:            white;
+  background-color: #42545C;
+}
+
+.detail__item--delete-button {
+  position:         absolute;
+  left:             210px;
+  top:              5px;
+  background-color: white;
+  color:            #525252;
+  font-size:        1.1rem;
+  margin:           0;
+  padding:          1px 10px 3px 10px;
+}
+
+.detail__item--delete-button:hover {
+  background-color: #525252;
+  color:            white;
 }
 
 /*
