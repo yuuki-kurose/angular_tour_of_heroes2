@@ -1,0 +1,10 @@
+// trform全体の振る舞いを変化させたい時
+.trform .trform_type_soft {
+   border-radius: 10px;
+}
+
+// trformの一部のみ振る舞いを変更したい時
+.trform .trform_type_soft {
+   border-radius: 50%;
+   overflow:      hidden;
+}
