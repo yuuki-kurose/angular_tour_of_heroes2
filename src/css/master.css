@@ -83,7 +83,7 @@
  * .heroes__name {
  *    align-self:       center;
  */
-label {
+.search__text--label {
   display: block;
   font-weight: bold;
   font-size: 1.2rem;
@@ -91,7 +91,7 @@ label {
   margin-bottom: 0.5rem;
 }
 
-input {
+.search__text--box {
   padding: 0.5rem;
   width: 100%;
   max-width: 600px;
@@ -99,16 +99,15 @@ input {
           box-sizing: border-box;
   display: block;
 }
-
-input:focus {
+.search__text--box:focus {
   outline: #336699 auto 1px;
 }
 
-li {
+.display__contents {
   list-style-type: none;
 }
 
-.search-result li a {
+.display__container > display__contents, .display__container > display__contents--link {
   border-bottom: 1px solid gray;
   border-left: 1px solid gray;
   border-right: 1px solid gray;
@@ -121,14 +120,22 @@ li {
   text-decoration: none;
   color: black;
 }
-
-.search-result li a:hover {
+.display__container > display__contents:hover, .display__container > display__contents--link:hover {
   background-color: #435A60;
   color: white;
 }
 
-ul.search-result {
+.display__container {
   margin-top: 0;
   padding-left: 0;
+}
+
+.trform .trform_type_soft {
+  border-radius: 10px;
+}
+
+.trform .trform_type_soft {
+  border-radius: 50%;
+  overflow: hidden;
 }
 /*# sourceMappingURL=master.css.map */
