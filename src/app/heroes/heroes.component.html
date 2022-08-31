@@ -4,9 +4,8 @@
 <div class="heroes__search">
    <label for="new-hero">Hero name: </label>
    <input id="new-hero" #heroName/>
-   <div class="heroes__button">
-     <button type="button" class="button button_add_heroes" (click)="add(heroName.value); heroName.value=''">Add hero</button>
-   </div>
+   <!-- Mixes記述-->
+   <button type="button" class="heroes__button button button_add_heroes" (click)="add(heroName.value); heroName.value=''">Add hero</button>
 </div>
 <!-- ヒーローリスト -->
 <div class="heroes__section detail">
