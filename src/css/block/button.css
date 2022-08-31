@@ -1,0 +1,12 @@
+.button {
+  background-color: white;
+  color: #525252;
+  font-size: 1.1rem;
+  padding: 0.5rem 1.5rem;
+  margin-bottom: 2rem;
+}
+.button.button_add_heroes:hover {
+  color: white;
+  background-color: #42545C;
+}
+/*# sourceMappingURL=button.css.map */
