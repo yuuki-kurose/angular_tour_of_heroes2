@@ -1,0 +1,10 @@
+// page全体の振る舞いを変化させたい時
+.page .page_page_type_soft {
+   border-radius: 10px;
+}
+
+// pageの一部のみ振る舞いを変更したい時
+.page__section .page__section_type_soft {
+   border-radius: 50%;
+   overflow:      hidden;
+}

@@ -1,0 +1,141 @@
+.detail__inner {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+}
+
+.detail__item {
+  position: relative;
+  cursor: pointer;
+}
+
+.detail__item.link {
+  color: #333;
+  text-decoration: none;
+  background-color: #EEE;
+  margin: 0.5em;
+  padding: 0.3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+  display: block;
+  width: 100px;
+}
+.detail__item.link:hover {
+  left: 0.1em;
+}
+.detail__item.link:hover:hover {
+  background-color: #2c3a41;
+  color: #e6e6e6;
+}
+.detail__item.link:hover:hover:active {
+  background-color: #525252;
+  color: #fafafa;
+}
+
+.detail__item--badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #405061;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  min-width: 16px;
+  text-align: right;
+  margin-right: 0.8em;
+  border-radius: 4px 0 0 4px;
+}
+
+.heroes__search--add-button {
+  background-color: white;
+  color: #525252;
+  font-size: 1.1rem;
+  padding: 0.5rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.add-button:hover {
+  color: white;
+  background-color: #42545C;
+}
+
+.detail__item--delete-button {
+  background-color: white;
+  color: #525252;
+  font-size: 1.1rem;
+  position: absolute;
+  left: 210px;
+  top: 5px;
+  margin: 0;
+  padding: 1px 10px 3px 10px;
+}
+
+.detail__item--delete-button:hover {
+  background-color: #525252;
+  color: white;
+}
+
+/*
+ * .heroes__name {
+ *    align-self:       center;
+ */
+.search__text--label {
+  display: block;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.search__text--box {
+  padding: 0.5rem;
+  width: 100%;
+  max-width: 600px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+}
+.search__text--box:focus {
+  outline: #336699 auto 1px;
+}
+
+.display__contents {
+  list-style-type: none;
+}
+
+.display__container > display__contents, .display__container > display__contents--link {
+  border-bottom: 1px solid gray;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  display: inline-block;
+  width: 100%;
+  max-width: 600px;
+  padding: 0.5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  color: black;
+}
+.display__container > display__contents:hover, .display__container > display__contents--link:hover {
+  background-color: #435A60;
+  color: white;
+}
+
+.display__container {
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.trform .trform_type_soft {
+  border-radius: 10px;
+}
+
+.trform .trform_type_soft {
+  border-radius: 50%;
+  overflow: hidden;
+}
+/*# sourceMappingURL=master.css.map */

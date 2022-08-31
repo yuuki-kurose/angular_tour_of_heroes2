@@ -1,20 +1,24 @@
 <h2>My Heroes</h2>
-<div>
+
+<!-- sectionとdetailの２つのクラスを定義する -->
+<div class="heroes__search">
    <label for="new-hero">Hero name: </label>
    <input id="new-hero" #heroName/>
-   <button type="button" class="add-button" (click)="add(heroName.value); heroName.value=''">Add hero</button>
+   <!-- Mixes記述-->
+   <button type="button" class="heroes__button button button_add_heroes" (click)="add(heroName.value); heroName.value=''">Add hero</button>
 </div>
 <!-- ヒーローリスト -->
-<ul class="heroes">
-  <!-- heroesプロパティを繰り返しで表示する -->
-  <li *ngFor="let hero of heroes" class="heroes__list">
-    <a routerLink="/detail/{{ hero.id }}" class="heroes__link">
-      <span class="heroes__badge">{{ hero.id }}</span>{{ hero.name }}
-    </a>
-    <button type="button" class="delete" title="delete hero" (click)="delete(hero)">
-    X
-    </button>
-  </li>
-</ul>
+<div class="heroes__section detail">
+ <ul class="detail__inner">
+   <li *ngFor="let hero of heroes" class="detail__item">
+     <a routerLink="/detail/{{ hero.id }}" class="detail__item--link">
+       <span class="detail__item--badge">{{ hero.id }}</span>{{ hero.name }}
+     </a>
+     <button type="button" class="detail__item--delete-button" title="delete hero" (click)="delete(hero)">
+     X
+     </button>
+   </li>
+ </ul>
+</div>
 
 

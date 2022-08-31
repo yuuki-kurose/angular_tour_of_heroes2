@@ -1,0 +1,10 @@
+@import "../app/heroes/_heroes.component.scss";
+@import "../app/hero-search/_hero-search.component.scss";
+@import "./Scss/_samp.component.scss";
+@import "../Scss/_hero.detail.scss";
+@import "../style";
+
+//上のインポートは本来なら間違いだと思うので、後に削除します。
+@import "../Block/button.scss";
+
+

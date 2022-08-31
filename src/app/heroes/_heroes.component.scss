@@ -1,0 +1,111 @@
+// 実際にリンクの動作のクラスを変数に代入してみる
+$hover-bgcolor:  #2c3a41;
+$active-bgcolor: #525252;
+
+// あらかじめよく使用するのは、mixinに登録しておく
+@mixin position {
+  position: relative;
+}
+
+@mixin width($size) {
+  width: $size + px; 
+}
+
+// ボタンの装飾をskinとstructureに分離してみました。
+@mixin button-skin {
+  background-color: white;
+  color:            #525252;
+  font-size:        1.1rem;
+}
+
+@mixin button-structure {
+  position:         absolute;
+  margin:           0;
+  padding:          1px 10px 3px 10px;
+}
+
+// ここからは、クラスに沿っての装飾になります。↓↓↓
+.detail__inner {
+  margin:          0 0 2em 0;
+  list-style-type: none;
+  padding:         0;
+  width:           15em;
+}
+
+.detail__item {
+  @include         position; 
+  cursor:          pointer;
+}
+.detail__item.link {
+  color:            #333;
+  text-decoration:  none;
+  background-color: #EEE;
+  margin:           0.5em;
+  padding:          0.3em 0;
+  height:           1.6em;
+  border-radius:    4px;
+  display:          block;
+  @include          width(100); 
+
+  &:hover {
+     left: 0.1em;
+
+     &:hover {
+        background-color: $hover-bgcolor;
+        color:            #e6e6e6;
+
+        &:active {
+           background-color: $active-bgcolor;
+           color:            #fafafa;
+        }
+     }
+  }   
+}
+
+.detail__item--badge {
+  display:          inline-block;
+  font-size:        small;
+  color:            white;
+  padding:          0.8em 0.7em 0 0.7em;
+  background-color: #405061;
+  line-height:      1em;
+  @include          position; 
+  left:             -1px;
+  top:              -4px;
+  height:           1.8em;
+  min-width:        16px;
+  text-align:       right;
+  margin-right:     0.8em;
+  border-radius:    4px 0 0 4px;
+}
+
+.heroes__search--add-button {
+ @include       button-skin;
+ padding:       .5rem 1.5rem;
+ margin-bottom: 2rem;
+}
+
+.add-button:hover {
+  color:            white;
+  background-color: #42545C;
+}
+
+.detail__item--delete-button {
+  @include          button-skin;
+  position:         absolute;
+  left:             210px;
+  top:              5px;
+  margin:           0;
+  padding:          1px 10px 3px 10px;
+}
+
+.detail__item--delete-button:hover {
+  background-color: #525252;
+  color:            white;
+}
+
+/*
+ * .heroes__name {
+ *    align-self:       center;
+ */
+/*# sourceMappingURL=heroes.component.css.map */
