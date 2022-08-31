@@ -1,12 +1,12 @@
 <!-- クリックイベントの処理により表示/非表示の制御 -->
-<div *ngIf="hero">
+<div *ngIf="hero" class="hero-detail">
   <h2>{{ hero.name | uppercase }} Details</h2>
   <div>id: {{ hero.id }}</div>
-  <div>
-    <label for="hero-name">Hero Name: </label>
-    <input id="hero-name" [(ngModel)]="hero.name" placeholder="Enter a name for the menu">
-    <button type="button" (click)="save()">Save</button>
-    <button type="button" (click)="goBack()">go back</button>
+  <div class="hero-detail__form">
+    <label for="hero-name"class="hero-detail__label">Hero Name: </label>
+    <input id="hero-name" class="hero-detail__input" [(ngModel)]="hero.name" placeholder="Enter a name for the menu">
+    <button type="button" class="hero-detail__save-button" (click)="save()">Save</button>
+    <button type="button" class="hero-detail__back-button" (click)="goBack()">go back</button>
   </div>
 </div>
 
